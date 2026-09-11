@@ -35,6 +35,11 @@ public class Account {
     public boolean isOverdrawn(){
         return balance < 0;
     }
+
+        public void transferTo(Account target, double amount) {
+        this.withdraw(amount);
+        target.deposit(amount);
+    }
     
 }
 
