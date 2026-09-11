@@ -10,9 +10,7 @@ public class Main {
         System.out.println("Via original: " + original.balance);
         System.out.println("Via copy: " + copy.balance);
 
-        Account empty = null;
-        empty.printInfo();
-    
+       
 
     }
 }
