@@ -38,7 +38,7 @@ public class Account {
             
         }
 
-        balance += amount;
+        balance -= amount;
         return  true;
     }
 
