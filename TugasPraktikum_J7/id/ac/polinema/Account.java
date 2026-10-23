@@ -49,4 +49,12 @@ public class Account {
     public void printInfo(){
         System.out.println(accountNumber + " - " + owner.getName() + " - balance: " +balance);
     }
+
+    public boolean deposit (double amount, String note) {
+        if (!deposit(amount)) {
+            return false;
+        }
+        System.out.println(accountNumber + " deposit note: " + note);
+        return true;
+    }
 }
