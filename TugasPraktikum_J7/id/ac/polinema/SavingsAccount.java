@@ -1,0 +1,25 @@
+package TugasPraktikum_J7.id.ac.polinema;
+
+public class SavingsAccount extends Account {
+    private static final double MINIMUM_BALANCE = 50000;
+    private double interestRate;
+
+    public SavingsAccount(String accountNumber, Customer owner, double balance, double interestRate){
+        super(accountNumber, owner, balance);
+        this.interestRate = interestRate;
+    }
+    public double getInterestRate(){
+        return interestRate;
+    }
+
+    @Override 
+    protected boolean canWithdraw(double amount){
+        return amount > 0 && (getBalance() - amount) >= MINIMUM_BALANCE;
+    }
+
+    @Override 
+    public void printInfo(){
+        super.printInfo();
+        System.out.println("Account type: Savings, iterest rate: " + interestRate);
+    }
+}
