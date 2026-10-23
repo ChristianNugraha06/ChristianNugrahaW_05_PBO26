@@ -45,19 +45,19 @@ public abstract class Account {
         System.out.println(accountNumber + " - " + owner.getName() + " - balance: " +balance);
     }
 
-    // public boolean deposit (double amount){
-    //     if (amount <=0) {
-    //         return false;
-    //     }
-    //     balance += amount;
-    //     return true;
-    // }
+    public boolean deposit (double amount){
+        if (amount <=0) {
+            return false;
+        }
+        balance += amount;
+        return true;
+    }
 
-    // public boolean deposit (double amount, String note) {
-    //     if (!deposit(amount)) {
-    //         return false;
-    //     }
-    //     System.out.println(accountNumber + " deposit note: " + note);
-    //     return true;
-    // }
+    public boolean deposit (double amount, String note) {
+        if (!deposit(amount)) {
+            return false;
+        }
+        System.out.println(accountNumber + " deposit note: " + note);
+        return true;
+    }
 }

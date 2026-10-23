@@ -1,8 +1,9 @@
 package TugasPraktikum_J9.id.ac.polinema;
 
-public class SavingsAccount extends Account {
+public class SavingsAccount extends Account implements InterestBearing {
     private static final double MINIMUM_BALANCE = 50000;
     private double interestRate;
+
 
     public double monthlyFee(){
         return 0;
@@ -25,5 +26,11 @@ public class SavingsAccount extends Account {
     public void printInfo(){
         super.printInfo();
         System.out.println("Account type: Savings, iterest rate: " + interestRate);
+    }
+
+    @Override 
+    public void applyInterest(){
+        double interest = getBalance() * interestRate;
+        deposit(interest);
     }
 }
