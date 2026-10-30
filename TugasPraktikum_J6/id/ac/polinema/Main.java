@@ -14,8 +14,6 @@ public class Main {
         Customer customer3 = new Customer("PT Maju Jaya", "0812-0000-0003");
         BusinessAccount acc3 = new BusinessAccount("A003", customer3, 1000000, 15000);
 
-        
-
         Bank bank = new Bank(10);
         bank.addAccount(acc1);
         bank.addAccount(acc2);
