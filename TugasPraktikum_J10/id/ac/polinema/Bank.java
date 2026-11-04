@@ -26,14 +26,14 @@ public class Bank {
         return true;
     }
 
-    public Account findAccount(String accountNumber){
+    public Account findAccount(String accountNumber) throws AccountNotFoundException{
         for (int i = 0; i < count; i++) {
             if (accounts[i].getAccountNumber().equals(accountNumber)) {
                 return accounts[i];
                 
             }
         }
-        return null;
+        throw new AccountNotFoundException("Account not found: " + accountNumber);
     }
 
     public void processMonthEnd(){
@@ -51,6 +51,14 @@ public class Bank {
     public void printAllAccounts(){
         for (int i = 0; i < count; i++) {
             accounts[i].printInfo();
+        }
+    }
+
+    public void printAuditLog(){
+        for (int i = 0; i < count; i++) {
+            if (accounts[i] instanceof Auditable auditable) {
+                System.out.println(auditable.auditLog());
+            }
         }
     }
 }

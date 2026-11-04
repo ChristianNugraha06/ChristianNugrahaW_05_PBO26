@@ -1,6 +1,6 @@
 package TugasPraktikum_J10.id.ac.polinema;
 
-public class CheckingAccount extends Account {
+public class CheckingAccount extends Account implements Auditable {
 
     private double overdraftLimit;
 
@@ -29,6 +29,11 @@ public class CheckingAccount extends Account {
     @Override 
     public double monthlyFee(){
         return MONTHLY_FEE;
+    }
+    
+    @Override 
+    public String auditLog(){
+        return "AUDIT " + getAccountNumber() + " - balance: " + getBalance() + " (Overdraft limit: " + overdraftLimit + ")";
     }
     
     
