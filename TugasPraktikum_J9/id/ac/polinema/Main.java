@@ -28,6 +28,9 @@ public class Main {
         savings.applyInterest();
         System.out.println("After interest: " + savings.getBalance());
 
+        System.out.println(acc2.auditLog());
+        System.out.println(checking.auditLog());
+
         
         
         

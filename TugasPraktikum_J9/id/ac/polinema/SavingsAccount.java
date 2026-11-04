@@ -4,6 +4,13 @@ public class SavingsAccount extends Account implements InterestBearing {
     private static final double MINIMUM_BALANCE = 50000;
     private double interestRate;
 
+    
+    @Override 
+    public void applyInterest(){
+        double interest = getBalance() * interestRate;
+        deposit(interest);
+    }
+
 
     public double monthlyFee(){
         return 0;
@@ -28,9 +35,4 @@ public class SavingsAccount extends Account implements InterestBearing {
         System.out.println("Account type: Savings, iterest rate: " + interestRate);
     }
 
-    @Override 
-    public void applyInterest(){
-        double interest = getBalance() * interestRate;
-        deposit(interest);
-    }
 }
