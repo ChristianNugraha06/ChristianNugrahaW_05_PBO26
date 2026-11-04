@@ -36,6 +36,18 @@ public class Bank {
         return null;
     }
 
+    public void processMonthEnd(){
+        for (int i = 0; i < count; i++) {
+            Account acc = accounts[i];
+            if (acc instanceof InterestBearing bearing) {
+                bearing.applyInterest();
+                System.out.println(acc.getAccountNumber()+ " interest applied, new balance: " + acc.getBalance());
+                
+            }
+            System.out.println(acc.getAccountNumber()+ " monthly fee: " + acc.monthlyFee());
+        }
+    }
+
     public void printAllAccounts(){
         for (int i = 0; i < count; i++) {
             accounts[i].printInfo();
